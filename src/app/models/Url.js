@@ -1,6 +1,6 @@
-import Sequelize, { Model } from 'sequelize';
+const { Sequelize, Model } = require('sequelize');
 
-class User extends Model {
+class Url extends Model {
   static init(sequelize) {
     super.init(
       {
@@ -14,4 +14,4 @@ class User extends Model {
   }
 }
 
-export default User;
+module.exports = Url;
