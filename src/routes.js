@@ -9,5 +9,6 @@ routes.get('/', (req, res) => {
 });
 
 routes.post('/url', UrlController.store);
+routes.get('/:id', UrlController.show);
 
 module.exports = routes;

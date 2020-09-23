@@ -24,6 +24,16 @@ class UrlController {
 
     return res.json({ id, url, slug });
   }
+
+  async show(req, res) {
+    const { id: slug } = req.params;
+    const url = await Url.findOne({ where: { slug } });
+
+    if (!url) {
+      return res.status(404).json({ error: 'Url not found' });
+    }
+    res.redirect(url.url);
+  }
 }
 
 module.exports = new UrlController();
