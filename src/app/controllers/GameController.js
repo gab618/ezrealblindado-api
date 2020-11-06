@@ -5,14 +5,16 @@ const { decryptWithAES } = require('../../utils/aes');
 const seApi = require('../../services/se');
 
 class GameController {
-  async store(req, res) {
+  async show(req, res) {
     const key = nanoid(12);
     await Game.create({ key });
     return res.json({ key });
   }
 
-  async delete(req, res) {
+  async update(req, res) {
     const { key, user, hash } = req.body;
+
+    console.log({ key, user, hash });
 
     const points = decryptWithAES(hash);
 

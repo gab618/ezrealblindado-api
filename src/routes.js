@@ -16,8 +16,8 @@ routes.post('/api/url', UrlController.store);
 routes.get('/api/mastery', MasteryController.show);
 routes.get('/api/quote', QuoteController.show);
 routes.put('/api/points', PointsController.update);
-routes.post('/api/game', GameController.store);
-routes.delete('/api/game', GameController.delete);
+routes.get('/api/game', GameController.show);
+routes.post('/api/game', GameController.update);
 
 routes.get('/:id', UrlController.show);
 
