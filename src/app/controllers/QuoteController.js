@@ -4,7 +4,7 @@ const Twitter = require('../../services/twitter');
 class QuoteController {
   async show(req, res) {
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
-    Twitter.tweet(quote);
+    // Twitter.tweet(quote);
     return res.send(quote);
   }
 }
