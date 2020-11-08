@@ -39,6 +39,18 @@ const cancelList = [
   'jogar URF',
   'ser da PanelaCraft',
   'ser mono Yuumi',
+  'ser fã de Jojo',
+  'por usar iphone',
+  'ouvir kpop',
+  'ser talarico',
+  'ser emo',
+  'ser bolsonarista',
+  'apertar o haxixe',
+  'ser terraplanista',
+  'ser otaku',
+  'ser matta sub',
+  'ver hentai',
+  'jogar freefire',
 ];
 
 module.exports = cancelList;
