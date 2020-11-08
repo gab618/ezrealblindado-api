@@ -81,7 +81,7 @@ class GreetingController {
         msg = `${greeting} @${sender} :D Chegou o cara que vai dar um jeito na playlist cansada do ez! @ezrealblindado responde o ${greeting} do Funky ezRage`;
         break;
       case 'fxxlks':
-        msg = `${greeting} @${sender} :D @ezrealblindado responde o ${greeting} do João ezRage`;
+        msg = `${greeting} @${sender} :D @ezrealblindado responde o ${greeting} do João e bora apertar haxixe ezRage`;
         break;
       case 'gothicgraves':
         msg = `${greeting} @${sender} <3 Bota ordem nesse chat <3 💋🍑 @ezrealblindado responde logo o ${greeting} do Erik ezRage`;
