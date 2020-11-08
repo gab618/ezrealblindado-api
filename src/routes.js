@@ -5,6 +5,7 @@ const MasteryController = require('./app/controllers/MasteryController');
 const QuoteController = require('./app/controllers/QuoteController');
 const PointsController = require('./app/controllers/PointsController');
 const GameController = require('./app/controllers/GameController');
+const GreetingController = require('./app/controllers/GreetingController');
 
 const routes = new Router();
 
@@ -18,6 +19,7 @@ routes.get('/api/quote', QuoteController.show);
 routes.put('/api/points', PointsController.update);
 routes.get('/api/game', GameController.show);
 routes.post('/api/game', GameController.update);
+routes.get('/api/greeting', GreetingController.show);
 
 routes.get('/:id', UrlController.show);
 
