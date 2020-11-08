@@ -149,6 +149,9 @@ class GreetingController {
       case 'yanzera':
         msg = `${greeting} @${sender} :D  @ezrealblindado responde logo o ${greeting} yanzera rei do TheVoice ezRage`;
         break;
+      case 'ezrealblindado':
+        msg = `Ta me dando ${greeting} por que, Gabriel?`;
+        break;
       default:
         msg = `@ezrealblindado responde o ${greeting} do/da ${sender}, seu tanso ezRage`;
         break;
