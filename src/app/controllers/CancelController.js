@@ -3,6 +3,8 @@ const cancelList = require('../../cancelList');
 class CancelController {
   async show(req, res) {
     let { sender, receiver } = req.query;
+    receiver = receiver.replace('!cancelar', '');
+    receiver = receiver.replace(' ', '');
 
     if (!receiver) {
       receiver = sender;
