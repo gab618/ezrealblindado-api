@@ -78,6 +78,7 @@ const cancelList = [
   'fazer sexo com as mãos',
   'assistir naruto',
   'skipar a música',
+  'ser incel',
 ];
 
 module.exports = cancelList;

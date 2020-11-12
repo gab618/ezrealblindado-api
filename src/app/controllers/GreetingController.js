@@ -104,6 +104,26 @@ class GreetingController {
       case 'lord_vinny317':
         msg = `${greeting} @${sender} :D Cuidado chat, chegou o lord dos bans 🔨 @ezrealblindado responde logo o ${greeting} do Lord Otaku ezRage`;
         break;
+      case 'mariesaotome':
+        switch (status_day.toLowerCase()) {
+          case 'night':
+            greeting = 'Bonne nuit';
+            break;
+          case 'evening':
+            greeting = 'Bonne après-midi';
+            break;
+          case 'salve':
+            greeting = 'Sauve';
+            break;
+          case 'dawn':
+            greeting = 'Bonne aube';
+            break;
+          default:
+            greeting = 'Bonjour';
+            break;
+        }
+        msg = `${greeting} mon ami  @${sender} 👋 @ezrealblindado responde logo o ${greeting} da Marie`;
+        break;
       case 'morganadotelemarketing':
         msg = `${greeting} @${sender} :D <3 @ezrealblindado responde logo o ${greeting} da morgana e vai logo jogar Outlast! ezRage`;
         break;
