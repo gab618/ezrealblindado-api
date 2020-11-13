@@ -17,6 +17,7 @@ routes.get('/', (req, res) => {
 routes.post('/api/url', UrlController.store);
 routes.get('/api/mastery', MasteryController.show);
 routes.get('/api/quote', QuoteController.show);
+routes.post('/api/quote', QuoteController.create);
 routes.put('/api/points', PointsController.update);
 routes.get('/api/game', GameController.show);
 routes.post('/api/game', GameController.update);
