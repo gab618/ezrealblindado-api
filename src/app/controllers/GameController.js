@@ -11,7 +11,7 @@ class GameController {
     return res.json({ key });
   }
 
-  async update(req, res) {
+  async store(req, res) {
     const { key, user, hash } = req.body;
 
     console.log({ key, user, hash });
