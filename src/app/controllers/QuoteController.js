@@ -9,6 +9,7 @@ class QuoteController {
 
   async create(req, res) {
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    quote.replace('@', '@.');
     Twitter.tweet(quote);
     return res.json({ tweet: quote });
   }
