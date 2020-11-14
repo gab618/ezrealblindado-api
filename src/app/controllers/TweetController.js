@@ -14,7 +14,7 @@ class TweetController {
 
     tweet = tweet.replace('@', '@.');
     Twitter.tweet(`${sender}: ${tweet}`);
-    return res.json({ sender, tweet });
+    return res.send(`tweetado com sucesso em nome de @${sender}`);
   }
 }
 
