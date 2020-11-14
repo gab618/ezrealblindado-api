@@ -7,6 +7,7 @@ const PointsController = require('./app/controllers/PointsController');
 const GameController = require('./app/controllers/GameController');
 const GreetingController = require('./app/controllers/GreetingController');
 const CancelController = require('./app/controllers/CancelController');
+const TweetController = require('./app/controllers/TweetController');
 
 const routes = new Router();
 
@@ -23,6 +24,7 @@ routes.get('/api/game', GameController.show);
 routes.post('/api/game', GameController.store);
 routes.get('/api/greeting', GreetingController.show);
 routes.get('/api/cancel', CancelController.show);
+routes.get('/api/tweet', TweetController.show);
 
 routes.get('/:id', UrlController.show);
 
