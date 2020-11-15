@@ -25,7 +25,7 @@ class GameController {
     await validKey.destroy();
 
     try {
-      await seApi.put(`${user}/${points}`);
+      await seApi.put(`points/${process.env.SE_CHANNEL}/${user}/${points}`);
       await Log.create({ user, points });
     } catch (error) {
       return res.status(500).json({ error: 'Request error ' + error });

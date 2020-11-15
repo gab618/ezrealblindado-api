@@ -10,7 +10,7 @@ class PointsController {
     }
 
     try {
-      await seApi.put(`${user}/${points}`);
+      await seApi.put(`points/${process.env.SE_CHANNEL}/${user}/${points}`);
     } catch (error) {
       return res.status(500).json({ error: 'Request error' });
     }
