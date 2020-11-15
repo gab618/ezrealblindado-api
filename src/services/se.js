@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const seApi = axios.create({
-  baseURL: `https://api.streamelements.com/kappa/v2/points/${process.env.SE_CHANNEL}`,
+  baseURL: `https://api.streamelements.com/kappa/v2`,
   headers: {
     accept: 'application/json',
     'content-type': 'Content-Type',
