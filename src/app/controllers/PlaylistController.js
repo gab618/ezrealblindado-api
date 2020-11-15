@@ -18,7 +18,10 @@ class PlaylistController {
       const songs = history.map((song) => {
         const title = song.song.title;
         const slug = song.song.videoId;
-        const user = song.song.user.username;
+        let user = 'ezrealblindado';
+        if (song.song.user) {
+          user = song.song.user.username;
+        }
         return { title, slug, user };
       });
 
@@ -32,7 +35,7 @@ class PlaylistController {
     } catch (error) {
       return res
         .status(500)
-        .send('Amigão? O @ezrealblindado errou no código de novo 🤨');
+        .send('Amigão? O @ezrealblindado errou no código de novo 🤨 ');
     }
   }
 }
