@@ -1,23 +1,42 @@
 const Queue = require('../models/Queue');
+const seApi = require('../../services/se');
 
 class QuoteController {
   //fila
   async index(req, res) {
     const queue = await Queue.findAll({ where: { completed: false } });
-    console.log(queue);
-    return res.json(queue);
+
+    if (queue.length === 0) {
+      return res.send('A fila está vazia');
+    }
+
+    let output = '';
+    queue.map((position, index) => {
+      const line = ` ${index + 1}) ${position.username} |`;
+      output = output + line;
+    });
+
+    return res.send(output);
   }
 
   //proximo
   async show(req, res) {
     const next = await Queue.findOne({ where: { completed: false } });
-    console.log(next);
-    return res.json(next);
+    if (!next) {
+      return res.send('A fila está vazia');
+    }
+    return res.send(`É a vez de @${next.username}`);
   }
 
   //entry
   async store(req, res) {
-    const { sender } = req.query;
+    const { sender, pass } = req.query;
+    const secretPass = process.env.GAME_SECRET;
+
+    if (pass !== secretPass) {
+      return res.send('Não autorizado');
+    }
+
     const alreadyInQueue = await Queue.findOne({
       where: { username: sender, completed: false },
     });
@@ -27,14 +46,23 @@ class QuoteController {
     }
 
     await Queue.create({ username: sender });
-    const list = await Queue.findOne({ where: { completed: false } });
+    const list = await Queue.findAll({ where: { completed: false } });
 
     return res.send(`@${sender} você entrou na fila na posição ${list.length}`);
   }
 
   //set result
   async update(req, res) {
-    const { result } = req.query;
+    const { result, pass } = req.query;
+    const secretPass = process.env.GAME_SECRET;
+
+    if (pass !== secretPass) {
+      return res.send('Não autorizado');
+    }
+
+    if (result !== 'win' && result !== 'lose') {
+      return res.send('Opção inválida. Opções: win, lose');
+    }
 
     const win = result === 'win' ? true : false;
     const points = win ? 100 : 50;
@@ -43,6 +71,14 @@ class QuoteController {
 
     if (!player) {
       res.send('A fila está vazia');
+    }
+
+    try {
+      await seApi.put(
+        `points/${process.env.SE_CHANNEL}/${player.username}/${points}`
+      );
+    } catch (error) {
+      return res.send('@ezrealblindado foi burro nos códigos mais uma vez Zzz');
     }
 
     await player.update({ win, completed: true });
