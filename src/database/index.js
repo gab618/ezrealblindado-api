@@ -4,8 +4,9 @@ const databaseConfig = require('../config/database');
 const Url = require('../app/models/Url');
 const Game = require('../app/models/Game');
 const Log = require('../app/models/Log');
+const Queue = require('../app/models/Queue');
 
-const models = [Url, Game, Log];
+const models = [Url, Game, Log, Queue];
 
 class Database {
   constructor() {
