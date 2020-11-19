@@ -60,17 +60,22 @@ class QuoteController {
       return res.send('Não autorizado');
     }
 
-    if (result !== 'win' && result !== 'lose') {
-      return res.send('Opção inválida. Opções: win, lose');
+    if (result !== 'win' && result !== 'lose' && result !== 'skip') {
+      return res.send('Opção inválida. Opções: win, lose, skip');
     }
 
     const win = result === 'win' ? true : false;
-    const points = win ? 100 : 50;
+    let points = win ? 100 : 50;
 
     const player = await Queue.findOne({ where: { completed: false } });
 
     if (!player) {
       res.send('A fila está vazia');
+    }
+
+    if (result === 'skip') {
+      await player.update({ win, completed: true });
+      return res.send(`@${player.username} skipado`);
     }
 
     try {
