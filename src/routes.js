@@ -9,6 +9,7 @@ const GreetingController = require('./app/controllers/GreetingController');
 const CancelController = require('./app/controllers/CancelController');
 const TweetController = require('./app/controllers/TweetController');
 const PlaylistController = require('./app/controllers/PlaylistController');
+const QueueController = require('./app/controllers/QueueController');
 
 const routes = new Router();
 
@@ -27,6 +28,11 @@ routes.get('/api/greeting', GreetingController.show);
 routes.get('/api/cancel', CancelController.show);
 routes.get('/api/tweet', TweetController.show);
 routes.get('/api/sr/history', PlaylistController.show);
+
+routes.get('/api/queue/list', QueueController.index);
+routes.get('/api/queue/current', QueueController.show);
+routes.get('/api/queue/join', QueueController.store);
+routes.get('/api/queue/next', QueueController.update);
 
 routes.get('/:id', UrlController.show);
 
