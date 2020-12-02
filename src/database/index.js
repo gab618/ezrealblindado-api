@@ -5,8 +5,9 @@ const Url = require('../app/models/Url');
 const Game = require('../app/models/Game');
 const Log = require('../app/models/Log');
 const Queue = require('../app/models/Queue');
+const Header = require('../app/models/Header');
 
-const models = [Url, Game, Log, Queue];
+const models = [Url, Game, Log, Queue, Header];
 
 class Database {
   constructor() {
