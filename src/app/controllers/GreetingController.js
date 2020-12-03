@@ -74,6 +74,9 @@ class GreetingController {
       case 'esquilomsm':
         msg = `${greeting} ${sender} 🐿️🐿️🐿️ @ezrealblindado responde o ${greeting} do ${sender}, seu tanso ezRage`;
         break;
+      case 'ezdaemon':
+        msg = `${greeting} @${sender} :D @ezrealblindado responde o ${greeting} grand ez demo 😈`;
+        break;
       case 'ezreal_is_life':
         msg = `${greeting} @${sender} :D @ezrealblindado responde o ${greeting} do campeão da copa loro ai 🏆`;
         break;
@@ -100,6 +103,9 @@ class GreetingController {
         break;
       case 'jayceblindadox':
         msg = `${greeting} @${sender} :D Chegou o melhor jayce do BR 😲 @ezrealblindado responde logo o ${greeting} do jayce ezRage`;
+        break;
+      case 'louisghiaccio':
+        msg = `${greeting} @${sender} :D @ezrealblindado responde logo o ${greeting} do Louis`;
         break;
       case 'lord_vinny317':
         msg = `${greeting} @${sender} :D Cuidado chat, chegou o lord dos bans 🔨 @ezrealblindado responde logo o ${greeting} do Lord Otaku ezRage`;
@@ -140,7 +146,7 @@ class GreetingController {
         msg = `${greeting} @${sender} :D <3 sdds ouvir um offspring @ezrealblindado responde logo o ${greeting} do Lucacido! ezRage`;
         break;
       case 'padresinged':
-        msg = `${greeting} @${sender} da zona rural 🌾🦖🕴️ @ezrealblindado responde logo o ${greeting} do padre! #ForaPanelaCraft`;
+        msg = `${greeting} @${sender} :D @ezrealblindado responde logo o ${greeting} do padre 👉🗿👈 👉🗽👈`;
         break;
       case 'pnddddd':
         msg = `${greeting} @${sender} 🐼🐼🐼🐼🐼  @ezrealblindado responde logo o ${greeting} do Panda!`;
