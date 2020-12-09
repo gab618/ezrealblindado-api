@@ -1,21 +1,34 @@
 const Header = require('../models/Header');
+const { differenceInSeconds } = require('date-fns');
 
 class HeaderController {
   async show(req, res) {
-    const headerList = await Header.findAll({ where: { is_completed: false } });
+    const headerList = await Header.findAll({
+      where: { is_completed: false },
+      order: ['id'],
+    });
 
     if (headerList.length === 0) return res.send('🤡🤡🤡');
 
-    if (headerList.length === 1) {
-      if (!headerList[0].start_time) {
-        console.log('criando start_time...');
-        await headerList[0].update({ start_time: new Date() });
-      }
-      await headerList[0].update({ is_started: true });
-      return res.send(`"${headerList[0].text}" - ${headerList[0].sender}`);
+    const header = headerList[0];
+
+    if (!header.is_started) {
+      await header.update({ start_time: new Date(), is_started: true });
+      return res.send(`"${header.text}" - ${header.sender}`);
     }
 
-    return res.send('todo');
+    if (headerList.length === 1) {
+      return res.send(`"${header.text}" - ${header.sender}`);
+    }
+
+    const secondsAgo = differenceInSeconds(new Date(), header.start_time);
+    if (secondsAgo > 600) {
+      await header.update({ is_completed: true });
+      const nextHeader = headerList[1];
+      return res.send(`"${nextHeader.text}" - ${nextHeader.sender}`);
+    }
+
+    return res.send(`"${header.text}" - ${header.sender}`);
   }
 
   async update(req, res) {
