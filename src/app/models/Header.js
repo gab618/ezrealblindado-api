@@ -5,6 +5,10 @@ class Header extends Model {
     super.init(
       {
         text: Sequelize.STRING,
+        sender: Sequelize.STRING,
+        is_completed: Sequelize.BOOLEAN,
+        is_started: Sequelize.BOOLEAN,
+        start_time: Sequelize.DATE,
       },
       {
         sequelize,
