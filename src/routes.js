@@ -34,8 +34,11 @@ routes.get('/api/queue/list', QueueController.index);
 routes.get('/api/queue/current', QueueController.show);
 routes.get('/api/queue/join', QueueController.store);
 routes.get('/api/queue/next', QueueController.update);
+
 routes.get('/api/header/show', HeaderController.show);
-routes.get('/api/header/write', HeaderController.update);
+routes.get('/api/header/write', HeaderController.store);
+routes.get('/api/header/edit', HeaderController.update);
+routes.get('/api/header/list', HeaderController.index);
 
 routes.get('/:id', UrlController.show);
 
