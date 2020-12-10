@@ -63,12 +63,14 @@ class HeaderController {
     });
 
     if (headerExists) {
-      return res.send(`@${sender} Vc ja tem um header na fila`);
+      return res.send(
+        `@${sender} Vc ja tem um header na fila. Use !header-edit se precisar editar :)`
+      );
     }
 
     await Header.create({ text, sender });
 
-    return res.send(`@${sender} header adicionado a fila`);
+    return res.send(`@${sender} header adicionado a !header-fila :)`);
   }
 
   async update(req, res) {
