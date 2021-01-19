@@ -51,12 +51,7 @@ class HeaderController {
   }
 
   async store(req, res) {
-    const secretPass = process.env.CREATE_URL_PASS;
-    const { text, sender, pass } = req.query;
-
-    if (!pass || pass !== secretPass) {
-      return res.status(401).json({ error: 'Permission denied' });
-    }
+    const { text, sender } = req.query;
 
     const headerExists = await Header.findOne({
       where: { is_completed: false, sender: sender },
@@ -74,12 +69,7 @@ class HeaderController {
   }
 
   async update(req, res) {
-    const secretPass = process.env.CREATE_URL_PASS;
-    const { text, sender, pass } = req.query;
-
-    if (!pass || pass !== secretPass) {
-      return res.status(401).json({ error: 'Permission denied' });
-    }
+    const { text, sender } = req.query;
 
     const header = await Header.findOne({
       where: { is_completed: false, sender: sender },

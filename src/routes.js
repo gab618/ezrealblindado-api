@@ -13,6 +13,8 @@ const QueueController = require('./app/controllers/QueueController');
 const HeaderController = require('./app/controllers/HeaderController');
 const BichoController = require('./app/controllers/BichoController');
 
+const adminMiddleware = require('./app/middlewares/admin');
+
 const routes = new Router();
 
 routes.get('/', (req, res) => {
@@ -33,12 +35,12 @@ routes.get('/api/sr/history', PlaylistController.show);
 
 routes.get('/api/queue/list', QueueController.index);
 routes.get('/api/queue/current', QueueController.show);
-routes.get('/api/queue/join', QueueController.store);
-routes.get('/api/queue/next', QueueController.update);
+routes.get('/api/queue/join', adminMiddleware, QueueController.store);
+routes.get('/api/queue/next', adminMiddleware, QueueController.update);
 
 routes.get('/api/header/show', HeaderController.show);
-routes.get('/api/header/write', HeaderController.store);
-routes.get('/api/header/edit', HeaderController.update);
+routes.get('/api/header/write', adminMiddleware, HeaderController.store);
+routes.get('/api/header/edit', adminMiddleware, HeaderController.update);
 routes.get('/api/header/list', HeaderController.index);
 
 routes.get('/api/bicho/bet', BichoController.store);
