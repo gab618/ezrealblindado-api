@@ -11,6 +11,7 @@ const TweetController = require('./app/controllers/TweetController');
 const PlaylistController = require('./app/controllers/PlaylistController');
 const QueueController = require('./app/controllers/QueueController');
 const HeaderController = require('./app/controllers/HeaderController');
+const BichoController = require('./app/controllers/BichoController');
 
 const routes = new Router();
 
@@ -39,6 +40,8 @@ routes.get('/api/header/show', HeaderController.show);
 routes.get('/api/header/write', HeaderController.store);
 routes.get('/api/header/edit', HeaderController.update);
 routes.get('/api/header/list', HeaderController.index);
+
+routes.get('/api/bicho/bet', BichoController.store);
 
 routes.get('/:id', UrlController.show);
 
