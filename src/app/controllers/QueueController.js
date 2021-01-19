@@ -30,12 +30,7 @@ class QuoteController {
 
   //entry
   async store(req, res) {
-    const { sender, pass } = req.query;
-    const secretPass = process.env.GAME_SECRET;
-
-    if (pass !== secretPass) {
-      return res.send('Não autorizado');
-    }
+    const { sender } = req.query;
 
     const alreadyInQueue = await Queue.findOne({
       where: { username: sender, completed: false },
@@ -53,12 +48,7 @@ class QuoteController {
 
   //set result
   async update(req, res) {
-    const { result, pass } = req.query;
-    const secretPass = process.env.GAME_SECRET;
-
-    if (pass !== secretPass) {
-      return res.send('Não autorizado');
-    }
+    const { result } = req.query;
 
     if (result !== 'win' && result !== 'lose' && result !== 'skip') {
       return res.send('Opção inválida. Opções: win, lose, skip');
@@ -70,7 +60,7 @@ class QuoteController {
     const player = await Queue.findOne({ where: { completed: false } });
 
     if (!player) {
-      res.send('A fila está vazia');
+      return res.send('A fila está vazia');
     }
 
     if (result === 'skip') {
