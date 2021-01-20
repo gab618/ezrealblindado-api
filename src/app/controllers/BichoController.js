@@ -12,23 +12,68 @@ class BichoController {
     if (!isValid) {
       return res.status(412).send(`@${user} Bicho inválido. Ver !bichos`);
     }
-    console.log(intAmount);
+
+    if (intAmount < 1) {
+      return res
+        .status(412)
+        .send(`@${user} Quantidade inválida. Valor mínimo: 1`);
+    }
 
     try {
-      const totalUserPoints = await seApi.get(
-        `points/${process.env.SE_CHANNEL}/${user}`
-      );
-      if (totalUserPoints < intAmount) {
+      const {
+        data: { points },
+      } = await seApi.get(`points/${process.env.SE_CHANNEL}/${user}`);
+
+      if (points < intAmount) {
         return res.status(412).send(`@${user} Pontos insuficiente!`);
       }
+
       await seApi.put(`points/${process.env.SE_CHANNEL}/${user}/-${intAmount}`);
     } catch (error) {
       return res.status(500).json({ error: 'Request error ' + error });
     }
 
-    await Bicho.create({ user, bicho, amount: intAmount });
+    const betExists = await Bicho.findOne({ where: { user, bicho } });
+
+    if (betExists) {
+      await betExists.update({ amount: intAmount + betExists.amount });
+    } else {
+      await Bicho.create({ user, bicho, amount: intAmount });
+    }
 
     return res.send(`@${user} Aposta feita no ${bicho}`);
+  }
+
+  async update(req, res) {
+    const bets = await Bicho.findAll();
+
+    if (bets.length === 0) {
+      return res.send('Nenhuma aposta registrada');
+    }
+
+    const odd = 10;
+    const bicho = bichos[Math.floor(Math.random() * bichos.length)];
+    let winners = await Bicho.findAll({ where: { bicho } });
+
+    let output = 'Resultado: Bicho ';
+
+    while (winners.length === 0) {
+      output = output + `>${bicho.toUpperCase()}< | Ninguem acertou :(`;
+      return res.send(output);
+    }
+
+    output = output + `>${bicho.toUpperCase()}< | Ganhadores: `;
+
+    for (const winner of winners) {
+      await seApi.put(
+        `points/${process.env.SE_CHANNEL}/${winner.user}/${winner.amount * odd}`
+      );
+      output = output + `@${winner.user} -> ${winner.amount * odd} pontos; `;
+    }
+
+    await Bicho.destroy({ where: {}, truncate: true });
+
+    return res.send(output);
   }
 }
 

@@ -1,3 +1,3 @@
-const cancelList = ['blindas', 'drezinho', 'loro', 'mrocha'];
+const cancelList = ['blindas', 'drezinho', 'loro', 'mrocha', 'pinto'];
 
 module.exports = cancelList;
