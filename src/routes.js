@@ -43,7 +43,8 @@ routes.get('/api/header/write', adminMiddleware, HeaderController.store);
 routes.get('/api/header/edit', adminMiddleware, HeaderController.update);
 routes.get('/api/header/list', HeaderController.index);
 
-routes.get('/api/bicho/bet', BichoController.store);
+routes.get('/api/bicho/bet', adminMiddleware, BichoController.store);
+routes.get('/api/bicho/pay', adminMiddleware, BichoController.update);
 
 routes.get('/:id', UrlController.show);
 
