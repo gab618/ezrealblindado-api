@@ -51,6 +51,7 @@ class BichoController {
       return res.send('Nenhuma aposta registrada');
     }
 
+    const odd = 10;
     const bicho = bichos[Math.floor(Math.random() * bichos.length)];
     let winners = await Bicho.findAll({ where: { bicho } });
 
@@ -65,9 +66,9 @@ class BichoController {
 
     for (const winner of winners) {
       await seApi.put(
-        `points/${process.env.SE_CHANNEL}/${winner.user}/${winner.amount * 18}`
+        `points/${process.env.SE_CHANNEL}/${winner.user}/${winner.amount * odd}`
       );
-      output = output + `@${winner.user} -> ${winner.amount * 18} pontos; `;
+      output = output + `@${winner.user} -> ${winner.amount * odd} pontos; `;
     }
 
     await Bicho.destroy({ where: {}, truncate: true });
