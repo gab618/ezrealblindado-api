@@ -26,7 +26,7 @@ class GreetingController {
       case 'aautumn':
         msg = `${greeting} @${sender} :D 🐟🐟🐟🐟🐟🐟🐟! @ezrealblindado da ${greeting} pro atum!`;
         break;
-      case 'alexiablindada':
+      case 'aleixaa':
         msg = `${greeting} @${sender} :D ${greeting} malala! @ezrealblindado da ${greeting} pra freefire!`;
         break;
       case 'antonydev':
@@ -59,6 +59,9 @@ class GreetingController {
       case 'dani0528':
         msg = `${greeting} @${sender} 🍞🍞🍞🍞🍞 @ezrealblindado da ${greeting} pra Dani pão 🥺`;
         break;
+      case 'danielhe4rt':
+        msg = `${greeting} @${sender} Vc deviria estar codando pra ficar rico logo primo`;
+        break;
       case 'davin250':
         msg = `${greeting} @${sender} :D @ezrealblindado da ${greeting} pro grande Davin ezRage`;
         break;
@@ -86,7 +89,7 @@ class GreetingController {
       case 'funkymonks07':
         msg = `${greeting} @${sender} :D Chegou o cara que vai dar um jeito na playlist cansada do ez! @ezrealblindado responde o ${greeting} do Funky ezRage`;
         break;
-      case 'fxxlks':
+      case 'foolks_':
         msg = `${greeting} @${sender} :D @ezrealblindado responde o ${greeting} do João e bora apertar haxixe 🌿`;
         break;
       case 'gothicgraves':
@@ -94,6 +97,9 @@ class GreetingController {
         break;
       case 'guutzz':
         msg = `${greeting} @${sender} meu lindo @ezrealblindado responde logo o ${greeting} do gutz`;
+        break;
+      case 'heisen190':
+        msg = `${greeting} @${sender} @ezrealblindado responde logo o ${greeting} do Heisen`;
         break;
       case 'hcdagalera':
         msg = `${greeting} @${sender} @ezrealblindado responde logo o ${greeting} do mister H C Twitch (lê direito ezRage)`;
@@ -103,6 +109,9 @@ class GreetingController {
         break;
       case 'jayceblindadox':
         msg = `${greeting} @${sender} :D Chegou o melhor jayce do BR 😲 @ezrealblindado responde logo o ${greeting} do jayce ezRage`;
+        break;
+      case 'jotapedrezinhater':
+        msg = `${greeting} @${sender} :D  @ezrealblindado responde logo o ${greeting} do JP (lê direito ezRage)`;
         break;
       case 'louisghiaccio':
         msg = `${greeting} @${sender} :D @ezrealblindado responde logo o ${greeting} do Louis`;
@@ -154,9 +163,6 @@ class GreetingController {
       case 'pontilhado':
         msg = `${greeting} @${sender} :D @ezrealblindado responde logo o ${greeting} do .-.-.-.-.-.-.-.-.-.- xD!`;
         break;
-      case 'sjotapez':
-        msg = `${greeting} @${sender} :D  @ezrealblindado responde logo o ${greeting} do JP (lê direito ezRage)`;
-        break;
       case 'tigreclaudio':
         msg = `${greeting} @${sender} 🐅  @ezrealblindado responde logo o ${greeting} do tigrão 🐯🐯🐯`;
         break;
@@ -168,6 +174,9 @@ class GreetingController {
         break;
       case 'xanx96':
         msg = `${greeting} @${sender} :D  @ezrealblindado responde logo o ${greeting} do xanx e lê o nick direito hein! ezRage`;
+        break;
+      case 'ximbilimba':
+        msg = `${greeting} @${sender} :D  @ezrealblindado responde logo o ${greeting} do ximb! ezRage`;
         break;
       case 'yamaru_sz':
         msg = `${greeting} @${sender} :D <3  @ezrealblindado responde logo o ${greeting} do yama e ja vai quitando do lol! ezRage`;
