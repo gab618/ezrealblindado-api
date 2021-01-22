@@ -1,3 +1,10 @@
-const cancelList = ['blindas', 'drezinho', 'loro', 'mrocha', 'pinto'];
+const animalList = [
+  'blindas',
+  'drezinho',
+  'loro',
+  'mrocha',
+  'pinto',
+  'chiquito',
+];
 
-module.exports = cancelList;
+module.exports = animalList;
