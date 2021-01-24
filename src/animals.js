@@ -5,6 +5,8 @@ const animalList = [
   'mrocha',
   'pinto',
   'chiquito',
+  'sobrecu',
+  'coxinha'
 ];
 
 module.exports = animalList;
