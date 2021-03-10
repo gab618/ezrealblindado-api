@@ -84,7 +84,7 @@ class GreetingController {
         msg = `${greeting} @${sender} :D @ezrealblindado responde o ${greeting} do campeão da copa loro ai 🏆`;
         break;
       case 'ezreal_soft2':
-        msg = `${greeting} @${sender} :D @ezrealblindado responde o ${greeting} do soft ezRage`;
+        msg = `${greeting} @${sender} princesa :D @ezrealblindado responde o ${greeting} do imperador ezRage`;
         break;
       case 'funkymonks07':
         msg = `${greeting} @${sender} :D Chegou o cara que vai dar um jeito na playlist cansada do ez! @ezrealblindado responde o ${greeting} do Funky ezRage`;
@@ -154,7 +154,7 @@ class GreetingController {
       case 'oolucacidoo':
         msg = `${greeting} @${sender} :D <3 sdds ouvir um offspring @ezrealblindado responde logo o ${greeting} do Lucacido! ezRage`;
         break;
-      case 'padresinged':
+      case 'PadreSeteBot':
         msg = `${greeting} @${sender} :D @ezrealblindado responde logo o ${greeting} do padre 👉🗿👈 👉🗽👈`;
         break;
       case 'pnddddd':
