@@ -155,7 +155,7 @@ class GreetingController {
         msg = `${greeting} @${sender} :D <3 sdds ouvir um offspring @ezrealblindado responde logo o ${greeting} do Lucacido! ezRage`;
         break;
       case 'PadreSeteBot':
-        msg = `${greeting} @${sender} :D @ezrealblindado responde logo o ${greeting} do padre 👉🗿👈 👉🗽👈`;
+        msg = `${greeting} @${sender} para com essa Cailtyn top seu safado!!! @ezrealblindado responde logo o ${greeting} do padre 👉🗿👈 👉🗽👈`;
         break;
       case 'pnddddd':
         msg = `${greeting} @${sender} 🐼🐼🐼🐼🐼  @ezrealblindado responde logo o ${greeting} do Panda!`;
