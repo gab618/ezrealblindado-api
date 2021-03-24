@@ -13,6 +13,7 @@ class TweetController {
     }
 
     tweet = tweet.replace('@', '@.');
+    tweet = tweet.replace('.', '. ');
     tweet = tweet.slice(0, 277 - sender.length);
     Twitter.tweet(`${sender}: ${tweet}`);
     return res.send(`tweetado com sucesso em nome de @${sender}`);
