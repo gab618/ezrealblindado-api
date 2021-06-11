@@ -12,9 +12,9 @@ const PlaylistController = require('./app/controllers/PlaylistController');
 const QueueController = require('./app/controllers/QueueController');
 const HeaderController = require('./app/controllers/HeaderController');
 const BichoController = require('./app/controllers/BichoController');
+const RoletaController = require('./app/controllers/RoletaController');
 
 const adminMiddleware = require('./app/middlewares/admin');
-const RoletaController = require('./app/controllers/RoletaController');
 
 const routes = new Router();
 
