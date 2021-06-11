@@ -14,6 +14,7 @@ const HeaderController = require('./app/controllers/HeaderController');
 const BichoController = require('./app/controllers/BichoController');
 
 const adminMiddleware = require('./app/middlewares/admin');
+const RoletaController = require('./app/controllers/RoletaController');
 
 const routes = new Router();
 
@@ -32,6 +33,7 @@ routes.get('/api/greeting', GreetingController.show);
 routes.get('/api/cancel', CancelController.show);
 routes.get('/api/tweet', TweetController.show);
 routes.get('/api/sr/history', PlaylistController.show);
+routes.get('/api/roleta', RoletaController.show);
 
 routes.get('/api/queue/list', QueueController.index);
 routes.get('/api/queue/current', QueueController.show);
