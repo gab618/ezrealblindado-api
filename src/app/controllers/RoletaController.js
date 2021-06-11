@@ -1,4 +1,4 @@
-const Log = require('../models/Log');
+//const Log = require('../models/Log');
 const seApi = require('../../services/se');
 
 class RoletaController {
@@ -17,7 +17,7 @@ class RoletaController {
           `points/${process.env.SE_CHANNEL}/${sender}/4`
         );
         console.log(response);
-        await Log.create({ user: sender, points: 4 });
+        //await Log.create({ user: sender, points: 4 });
         msg = `/me ${sender} stackou +4 stacks da gota PogChamp`;
       } catch (error) {
         msg = '/me Erro: ' + error;
