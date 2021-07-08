@@ -26,8 +26,8 @@ class GreetingController {
       case 'aautumn':
         msg = `${greeting} @${sender} :D 🐟🐟🐟🐟🐟🐟🐟! @ezrealblindado da ${greeting} pro atum!`;
         break;
-      case 'aleixaa':
-        msg = `${greeting} @${sender} :D ${greeting} malala! @ezrealblindado da ${greeting} pra freefire!`;
+      case 'ratodecrocs':
+        msg = `${greeting} @${sender} :D ${greeting} Netuno e Rusty! 🐈🐈 @ezrealblindado da ${greeting} pra freefire!`;
         break;
       case 'antonydev':
         msg = `${greeting} @${sender} famoso obrigado pelo sub xD @ezrealblindado da ${greeting} pro antony`;
