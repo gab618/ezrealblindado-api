@@ -42,7 +42,7 @@ class GreetingController {
         msg = `${greeting} @${sender} :D coloca um sailor moon ai. @ezrealblindado da ${greeting} pro aru!`;
         break;
       case 'beascoito':
-        msg = `${greeting} @${sender} :D 🍪🍪🍪🍪🍪 @ezrealblindado da ${greeting} pra sua webmo 😍`;
+        msg = `${greeting} @${sender} :D 🍪🍪🍪🍪🍪 @ezrealblindado da ${greeting} pra maior peituda do chat 😳🍒`;
         break;
       case 'bili92':
         msg = `${greeting} @${sender} :D @ezrealblindado da ${greeting} pro mestre da Microsoft xD`;
