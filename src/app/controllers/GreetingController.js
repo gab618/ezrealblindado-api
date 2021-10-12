@@ -35,8 +35,8 @@ class GreetingController {
       case 'aqueladafigurinha':
         msg = `${greeting} @${sender} @ezrealblindado da ${greeting} pra Figurinha`;
         break;
-      case 'arbiht':
-        msg = `${greeting} @${sender} Pronto pro ban? @ezrealblindado da ban no arb 🔨`;
+      case 'armandoney19':
+        msg = `${greeting} @${sender} Salve pro mano Stingy do LazyTown`;
         break;
       case 'arutemisu':
         msg = `${greeting} @${sender} :D coloca um sailor moon ai. @ezrealblindado da ${greeting} pro aru!`;
